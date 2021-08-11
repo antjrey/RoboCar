@@ -78,36 +78,31 @@ void loop() {
   digitalWrite(motor2pin1, HIGH);
   digitalWrite(motor2pin2, LOW);
 
-  delay(5000);
-  int i = Serial.println( hc.dist() );
+  int i = hc.dist();
+  Serial.println( hc.dist() );
 
   //if the distance is small between the car and the space in front it will chose a new direction
   if(i < 10){
     right_turn();
-    delay(3000);
-    dist_one = Serial.println( hc.dist() );
+    Serial.println( hc.dist() );
+    dist_one = hc.dist();
+    delay(1000);
     
     right_turn();
-    delay(3000);
-    dist_two = Serial.println( hc.dist() );
+    Serial.println( hc.dist() );
+    dist_two = hc.dist();
+    delay(1000);
     
     right_turn();
-    delay(3000);
-    dist_three = Serial.println( hc.dist() );
+    Serial.println( hc.dist() );
+    dist_three = hc.dist();
+    delay(1000);
     
     right_turn();
-    delay(3000);
-    dist_four = Serial.println( hc.dist() );
+    Serial.println( hc.dist() );
+    dist_four = hc.dist();
+    delay(1000);
 
-    //halts the car
-    digitalWrite(motor1speed, 255);
-    digitalWrite(motor1pin1, LOW);
-    digitalWrite(motor1pin2, LOW);
-  
-    digitalWrite(motor2speed, 255);
-    digitalWrite(motor2pin1, LOW);
-    digitalWrite(motor2pin2, LOW);
-    
     //sorts the array for the highest value for the farthest distance
     int arr[] = {dist_one, dist_two, dist_three, dist_four};
     sort(arr, 4); 
@@ -135,17 +130,7 @@ void loop() {
           digitalWrite(motor2pin2, LOW);
       }
 }
-else{
-          digitalWrite(motor1speed, 255);
-          digitalWrite(motor1pin1, HIGH);
-          digitalWrite(motor1pin2, LOW);
-        
-          digitalWrite(motor2speed, 255);
-          digitalWrite(motor2pin1, HIGH);
-          digitalWrite(motor2pin2, LOW);
-  
-}
+
 }
     
-  
   
