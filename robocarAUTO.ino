@@ -78,7 +78,7 @@ void loop() {
   digitalWrite(motor2pin1, HIGH);
   digitalWrite(motor2pin2, LOW);
 
-  delay(5000);
+
   int i = 0;
   i = hc.dist() ;
 
