@@ -92,12 +92,12 @@ void direction_pick(){
       }
       else if( dist_four == arr[0]){
           digitalWrite(motor1speed, 255);
-          digitalWrite(motor1pin1, HIGH);
-          digitalWrite(motor1pin2, LOW);
+          digitalWrite(motor1pin1, LOW);
+          digitalWrite(motor1pin2, HIGH);
         
           digitalWrite(motor2speed, 255);
-          digitalWrite(motor2pin1, HIGH);
-          digitalWrite(motor2pin2, LOW);
+          digitalWrite(motor2pin1, LOW);
+          digitalWrite(motor2pin2, HIGH);
       }
 
   
@@ -123,12 +123,12 @@ void loop() {
   // put your main code here, to run repeatedly:  
 
   digitalWrite(motor1speed, 255);
-  digitalWrite(motor1pin1, LOW);
-  digitalWrite(motor1pin2, HIGH);
+  digitalWrite(motor1pin1, HIGH);
+  digitalWrite(motor1pin2, LOW);
 
   digitalWrite(motor2speed, 255);
-  digitalWrite(motor2pin1, LOW);
-  digitalWrite(motor2pin2, HIGH);
+  digitalWrite(motor2pin1, HIGH);
+  digitalWrite(motor2pin2, LOW);
 
   int i = hc.dist();
   Serial.println( hc.dist() );
