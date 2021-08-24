@@ -20,7 +20,7 @@ int dist_two;
 int dist_three;
 int dist_four;
 
-void right_turn(){
+void turn(){
     digitalWrite(motor1speed, 255);
     digitalWrite(motor1pin1, HIGH);
     digitalWrite(motor1pin2, LOW);
@@ -49,27 +49,27 @@ void sort(int a[], int size) {
 void direction_pick(){
 
     digitalWrite(motor1speed, 255);
-    digitalWrite(motor1pin1, HIGH);
-    digitalWrite(motor1pin2, LOW);
+    digitalWrite(motor1pin1, LOW);
+    digitalWrite(motor1pin2, HIGH);
   
     digitalWrite(motor2speed, 255);
-    digitalWrite(motor2pin1, HIGH);
-    digitalWrite(motor2pin2, LOW);
-    delay(100);
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, HIGH);
+    delay(1000);
     
-    right_turn();
+    turn();
     Serial.println( hc.dist() );
     dist_one = hc.dist();
     
-    right_turn();
+    turn();
     Serial.println( hc.dist() );
     dist_two = hc.dist();
 
-    right_turn();
+    turn();
     Serial.println( hc.dist() );
     dist_three = hc.dist();
     
-    right_turn();
+    turn();
     Serial.println( hc.dist() );
     dist_four = hc.dist();
 
@@ -79,25 +79,25 @@ void direction_pick(){
 
     //uses direction with the most distace to go
       if( dist_one == arr[0]){
-        right_turn();
+        turn();
       }
         else if( dist_two == arr[0]){
-        right_turn();
-        right_turn();
+        turn();
+        turn();
       }
       else if( dist_three == arr[0]){
-        right_turn();
-        right_turn();
-        right_turn();
+        turn();
+        turn();
+        turn();
       }
       else if( dist_four == arr[0]){
           digitalWrite(motor1speed, 255);
-          digitalWrite(motor1pin1, LOW);
-          digitalWrite(motor1pin2, HIGH);
+          digitalWrite(motor1pin1, HIGH);
+          digitalWrite(motor1pin2, LOW);
         
           digitalWrite(motor2speed, 255);
-          digitalWrite(motor2pin1, LOW);
-          digitalWrite(motor2pin2, HIGH);
+          digitalWrite(motor2pin1, HIGH);
+          digitalWrite(motor2pin2, LOW);
       }
 
   
@@ -133,7 +133,7 @@ void loop() {
   int i = hc.dist();
   Serial.println( hc.dist() );
 
-  if(i < 10){
+  if(i < 15){
     direction_pick();
   }
 
