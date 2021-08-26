@@ -29,7 +29,7 @@ void turn(){
     digitalWrite(motor2pin1, LOW);
     digitalWrite(motor2pin2, HIGH);
 
-    delay(1000);
+    delay(500);
   }
 
 // A function to implement bubble sort 
