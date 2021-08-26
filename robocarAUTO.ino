@@ -59,7 +59,7 @@ void direction_pick(){
     
     do{
       turn();
-    }while(130 > hc.dist() );
+    }while(100 > hc.dist() );
 }
 
 
