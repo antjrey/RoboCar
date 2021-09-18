@@ -21,6 +21,8 @@ int dist_three;
 int dist_four;
 
 void turn(){
+
+    //spin
     digitalWrite(motor1speed, 255);
     digitalWrite(motor1pin1, HIGH);
     digitalWrite(motor1pin2, LOW);
@@ -28,7 +30,16 @@ void turn(){
     digitalWrite(motor2speed, 255);
     digitalWrite(motor2pin1, LOW);
     digitalWrite(motor2pin2, HIGH);
+    delay(1000);
 
+    //stop
+    digitalWrite(motor1speed, 255);
+    digitalWrite(motor1pin1, LOW);
+    digitalWrite(motor1pin2, LOW);
+
+    digitalWrite(motor2speed, 255);
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, LOW);
     delay(500);
   }
 
