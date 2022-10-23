@@ -26,12 +26,6 @@ class motorDriver:
         self.in3 = in3
         self.in4 = in4
 
-        'set enA and enB to pwm'
-        self.pA = GPIO.PWM(self.enA,1000)
-        self.pB = GPIO.PWM(self.enB,1000)
-        self.pA.start(25)
-        self.pB.start(25)
-
         'sets all pins to output and to zero'
         GPIO.setup(self.in1,GPIO.OUT)
         GPIO.setup(self.in2,GPIO.OUT)
@@ -44,6 +38,12 @@ class motorDriver:
         GPIO.setup(self.enB,GPIO.OUT)
         GPIO.output(self.in3,GPIO.LOW)
         GPIO.output(self.in4,GPIO.LOW)
+        
+        'set enA and enB to pwm'
+        self.pA = GPIO.PWM(self.enA,1000)
+        self.pB = GPIO.PWM(self.enB,1000)
+        self.pA.start(25)
+        self.pB.start(25)
         
     
         
