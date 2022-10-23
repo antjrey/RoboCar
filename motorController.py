@@ -15,7 +15,7 @@ class motorDriver:
     in3 = 0
     in4 = 0
 
-    def __ini__(self, enA, enB, in1, in2, in3, in4):
+    def __init__(self, enA, enB, in1, in2, in3, in4):
 
         'sets up pin assignment'
         GPIO.setmode(GPIO.BCM)
