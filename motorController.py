@@ -107,13 +107,13 @@ def main():
 
     test = motorDriver(22, 7, 16, 18, 13, 11)
 
-    test.forward(75)
+    test.forward(75.0)
     time.sleep(3)
-    test.backward(75)
+    test.backward(75.0)
     time.sleep(3)
-    test.left(75)
+    test.left(75.0)
     time.sleep(3)
-    test.left(75)
+    test.left(75.0)
 
 
 if __name__ == "__main__":
