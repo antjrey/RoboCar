@@ -1,12 +1,19 @@
 from ast import main
 import sys
 import time
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 class motorDriver:
 
     'controls a L298n motor controller'
+
+    enA = 0
+    enB = 0
+    in1 = 0
+    in2 = 0
+    in3 = 0
+    in4 = 0
 
     def __ini__(self, enA, enB, in1, in2, in3, in4):
 
