@@ -8,17 +8,10 @@ class motorDriver:
 
     'controls a L298n motor controller'
 
-    enA = 0
-    enB = 0
-    in1 = 0
-    in2 = 0
-    in3 = 0
-    in4 = 0
-
     def __init__(self, enA, enB, in1, in2, in3, in4):
 
         'sets up pin assignment'
-        GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BOARD)
         self.enA = enA
         self.enB = enB
         self.in1 = in1
@@ -38,7 +31,7 @@ class motorDriver:
         GPIO.setup(self.enB,GPIO.OUT)
         GPIO.output(self.in3,GPIO.LOW)
         GPIO.output(self.in4,GPIO.LOW)
-        
+
         'set enA and enB to pwm'
         self.pA = GPIO.PWM(self.enA,1000)
         self.pB = GPIO.PWM(self.enB,1000)
@@ -112,7 +105,7 @@ class motorDriver:
 def main():
     'test that motors are funtioncal'
 
-    test = motorDriver(25, 4, 23, 24, 27, 17)
+    test = motorDriver(22, 7, 16, 18, 13, 11)
 
     test.forward(75)
     time.sleep(3)
